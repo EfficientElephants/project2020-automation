@@ -1,6 +1,9 @@
-# NodeJs-Cucumber-Selenium
+# Project2020 Automation
+Testing hosted on: 
 ![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
 ---
+
+Parent project through lambdatest's cucumber/selenium repo
 
 ### Environment Setup
 
