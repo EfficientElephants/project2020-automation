@@ -1,31 +1,26 @@
 {
-  "name": "project2020-automation",
-  "version": "1.0.0",
-  "description": "cucumber and selenium automation for project 2020",
-  "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/.bin/cucumber-js"
-  },
+  "name": "cucumber-js-lambdatest",
+  "version": "0.1.0",
+  "readme": "Cucumber-JS Integration with [lambdatest](https://www.lambdatest.com)",
+  "description": "Selenium examples for Cucumber-JS and lambdatest Automate",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EfficientElephants/project2020-automation.git"
+    "url": "git+https://github.com/lambdatest/cucumber-js-lambdatest.git"
   },
-  "keywords": [
-    "automation"
-  ],
-  "author": "Anna Ruble, Maddie Kuehn, Anna Peterson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EfficientElephants/project2020-automation/issues"
+  "scripts": {
+    "test": "npm run single && npm run local && npm run parallel",
+    "single": "CONFIG_FILE=single ./node_modules/cucumber/bin/cucumber.js features/single.feature",
+    "local": "CONFIG_FILE=local ./node_modules/cucumber/bin/cucumber.js features/local.feature",
+    "parallel": "CONFIG_FILE=parallel ./scripts/cucumber-runner.js features/single.feature",
+    "parallelJenkins": "CONFIG_FILE=parallelJenkins ./scripts/cucumber-runner.js features/single.feature",
+    "singleJenkins": "CONFIG_FILE=singleJenkins ./scripts/cucumber-runner.js features/single.feature"
   },
-  "homepage": "https://github.com/EfficientElephants/project2020-automation#readme",
+  "devDependencies": {
+    "cucumber": "^1.3.3",
+    "cucumber-assert": "1.0.4",
+    "selenium-webdriver": "^3.6.0"
+  },
   "dependencies": {
-    "assert": "^2.0.0",
-    "chai": "^4.2.0",
-    "chromedriver": "^80.0.1",
-    "cucumber": "1.3.0",
-    "geckodriver": "^1.3.1",
-    "selenium-cucumber-js": "^1.7.0",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "@lambdatest/node-tunnel": "^1.0.0"
   }
 }
