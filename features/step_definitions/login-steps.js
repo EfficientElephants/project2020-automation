@@ -47,4 +47,15 @@ this.When(/^I see I am on the login page with "([^"]*)"$/, function(loginHeader,
         assert.equal(text, welcomeMsg, next, "Expected title to be " + welcomeMsg);
       });
   });
+
+  this.Then(/^I should see an error "([^"]*)"$/, function(errorMsg, next) {
+    var self = this;
+    this.driver
+      .findElement({ xpath: "/html/body/div/div/div/p" })
+      .getText()
+      .then(function(text) {
+        console.log(text);
+        assert.equal(text, errorMsg, next, "Expected title to be " + errorMsg);
+      });
+  });
 };
