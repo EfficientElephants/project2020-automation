@@ -1,6 +1,6 @@
 exports.config = {
-  user: process.env.LT_USERNAME || 'rublan01',
-  key: process.env.LT_ACCESS_KEY || 'LWuvBTtphjn18g7z9xVgKhw2Ot1DLIHzyxLyUqimFcgdnmaWQw',
+  user: process.env.LT_USERNAME || '',
+  key: process.env.LT_ACCESS_KEY || '',
   server: 'hub.lambdatest.com',
 
   capabilities: [{
