@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 let myStr = process.env.LT_BROWSERS;
 myStr = myStr.replace(/operatingSystem/g, 'platform');
 myStr = myStr.replace(/browserVersion/g, 'version');

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 exports.config = {
   user: process.env.LT_USERNAME || '',
   key: process.env.LT_ACCESS_KEY || '',
