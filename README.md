@@ -3,7 +3,9 @@ Testing hosted on:
 ![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
 ---
 
-Parent project through lambdatest's cucumber/selenium repo
+The structure of this repository is based off of LambdaTest's [NodeJS-Cucumber-Selenium](https://github.com/LambdaTest/NodeJs-Cucumber-Selenium) project. This testing project is designed to test EfficientElephants/project2020's beta version, hosted [here](https://project-2020.azurewebsites.net/#/).
+
+We are utilizing Cucumber with Selenium and NodeJS for our testing automation for our front-end UI. Cucumber is a behavior-driven development testing framework, which we decided to use as it is clear and easy to understand, allows us to evaluate the logic in our testing and other scenarios quickly and efficiently should something fail, and it is effective. 
 
 ### Environment Setup
 
@@ -14,7 +16,7 @@ Parent project through lambdatest's cucumber/selenium repo
     $ brew install node
     ```
 2. Lambdatest Credentials
-    * Set LambdaTest username and access key in environment variables. It can be obtained from [LambdaTest dashboard](https://automation.lambdatest.com/)    
+    * Set LambdaTest username and access key in environment variables. It can be obtained from [LambdaTest dashboard](https://automation.lambdatest.com/) 
     example:
     - For linux/mac
     ```
@@ -29,8 +31,7 @@ Parent project through lambdatest's cucumber/selenium repo
     
     ```
 3. Setup
-    * Clone [NodeJs-Cucumber-Selenium](https://github.com/LambdaTest/NodeJs-Cucumber-Selenium.git) from GitHub.
-    * Navigate to the cloned directory
+    * Navigate to this cloned directory
     * Install project dependencies
     ```
     $ npm install
@@ -38,10 +39,10 @@ Parent project through lambdatest's cucumber/selenium repo
     * Update `*.conf.js` files inside the `conf/` directory with your LambdaTest Username and Access Key
 
 ### Running Tests
-
- * To Start Test:
-    - Navigate to karma-jasmine-sample
-    - Run following command
+   * Run any scenario
+   ```
+   $ SCENARIO={filename.feature} npm run scenario
+   ```
    * Test in Single
     ```
     $ npm run single
