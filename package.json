@@ -8,7 +8,9 @@
     "url": "git+https://github.com/lambdatest/cucumber-js-lambdatest.git"
   },
   "scripts": {
+    "simpleTest": "./node_modules/.bin/cucumber-js",
     "test": "npm run login && npm run local && npm run parallel",
+    "scenario": "CONFIG_FILE=login ./node_modules/cucumber/bin/cucumber.js features/$SCENARIO",
     "login": "CONFIG_FILE=login ./node_modules/cucumber/bin/cucumber.js features/login.feature",
     "local": "CONFIG_FILE=local ./node_modules/cucumber/bin/cucumber.js features/local.feature",
     "parallel": "CONFIG_FILE=parallel ./scripts/cucumber-runner.js features/login.feature",
@@ -22,6 +24,7 @@
   },
   "dependencies": {
     "@lambdatest/node-tunnel": "^1.0.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "sleep": "^6.1.0"
   }
 }
