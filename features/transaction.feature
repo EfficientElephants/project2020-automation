@@ -7,7 +7,7 @@ Scenario: Log a new expense from dashboard page
     When I type in password "testing"
     When I click on the login button
     When I should see I am on the dashboard page
-    When I click on the "Add Expense" expense button
+    When I click on the "Add New Expense" expense button
     When the "Add an Expense" modal pops up
     When I add the item "Groceries"
     When I add the price "150"
@@ -22,7 +22,7 @@ Scenario: Log a new income from dashboard page
     When I type in password "testing"
     When I click on the login button
     When I should see I am on the dashboard page
-    When I click on the "Add Income" income button
+    When I click on the "Add New Income" income button
     When the "Add an Income" modal pops up
     When I add the item "Work Study"
     When I add the price "98"

@@ -6,10 +6,11 @@ module.exports = function() {
         var self = this;
         this.driver
           .findElement({ xpath: "/html/body/div/div/div[2]/div[3]/div[1]/div/button" })
-          .getText()
-          .then(function(text) {
-            assert.equal(text, btnText, next, "Expected title to be " + btnText);
-          })
+        //   .getText()
+        //   .then(function(text) {
+        //     assert.equal(text, btnText, next, "Expected title to be " + btnText);
+        //   })
+          .click()
           .then(next);
       });
 
@@ -17,10 +18,11 @@ module.exports = function() {
         var self = this;
         this.driver
           .findElement({ xpath: "/html/body/div/div/div[2]/div[3]/div[2]/div/button" })
-          .getText()
-          .then(function(text) {
-            assert.equal(text, btnText, next, "Expected title to be " + btnText);
-          })
+          .click()
+        //   .getText()
+        //   .then(function(text) {
+        //     assert.equal(text, btnText, next, "Expected title to be " + btnText);
+        //  })
           .then(next);
       });
 
@@ -28,32 +30,43 @@ module.exports = function() {
         var self = this;
         this.driver
         .findElement({ xpath: "/html/body/div[3]/div/div/div[1]/div" })
-        .getText()
-        .then(function(text) {
-          assert.equal(text, modalType, next, "Expected title to be " + modalType);
-        })
+        .click()
+        // .getText()
+        // .then(function(text) {
+        //   assert.equal(text, modalType, next, "Expected title to be " + modalType);
+        // })
         .then(next);
       });
 
-    this.When(/^the "([^"]*)" modal pops up$/, function (arg1, next) {
-        // Write code here that turns the phrase above into concrete actions
-        next(null, 'pending');
-      });
-
-    this.When(/^I add the item "([^"]*)"$/, function (arg1, next) {
-        // Write code here that turns the phrase above into concrete actions
-        next(null, 'pending');
-      });
-
-    this.When(/^I add the price "([^"]*)"$/, function (arg1, next) {
-        // Write code here that turns the phrase above into concrete actions
-        next(null, 'pending');
-      });
-
-    this.When(/^I choose the category "([^"]*)"$/, function (arg1, next) {
+    this.When(/^I add the item "([^"]*)"$/, function (item, next) {
         var self = this;
         this.driver
-        .findElement({ xpath: "/html/body/div/div/div[2]/div[3]/div[2]/div/button" })
+          .findElement({ id: "formItem" })
+          .sendKeys(item)
+          .then(next);
+      });
+
+    this.When(/^I add the price "([^"]*)"$/, function (price, next) {
+        var self = this;
+        this.driver
+          .findElement({ id: "formPrice" })
+          .sendKeys(price)
+          .then(next);
+      });
+
+    this.When(/^I choose the category "([^"]*)"$/, function (cat, next) {
+        var self = this;
+        this.driver
+          .findElement({ id: "formCategory" })
+          .click()
+          .sendKeys(cat + "\n")
+          .then(next);
+      });
+
+    this.When(/^I click the "([^"]*)" button$/, function (arg1, next) {
+        var self = this;
+        this.driver
+        .findElement({ class: "modal-save-changes btn btn-primary" })
         .getText()
         .then(function(text) {
           console.log(text);
@@ -62,14 +75,16 @@ module.exports = function() {
         .then(next);
       });
 
-    this.When(/^I click the "([^"]*)" button$/, function (arg1, next) {
-        // save button
-        next(null, 'pending');
-      });
-
-    this.Then(/^I should see the "([^"]*)" toast pop up$/, function (arg1, next) {
-        // Write code here that turns the phrase above into concrete actions
-        next(null, 'pending');
+    this.Then(/^I should see the "([^"]*)" toast pop up$/, function (toastText, next) {
+        var self = this;
+        this.driver
+        .findElement({ class: "toast-body" })
+        .getText()
+        .then(function(text) {
+          console.log(text);
+          assert.equal(text, toastText, next, "Expected title to be " + toastText);
+        })
+        .then(next);
       });
 
 }
