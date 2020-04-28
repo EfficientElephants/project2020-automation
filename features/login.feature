@@ -31,6 +31,6 @@ Scenario: Unsuccessful log in due to incorrect password
 @InvalidUsername
 Scenario: Unsuccessful log in due to invalid username
   When I see I am on the login page with "Log In"
-  When I type in username
+  When I type in username "notreal"
   When I click on the login button
   Then I should see an error "Error: Invalid Username"

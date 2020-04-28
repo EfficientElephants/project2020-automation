@@ -12,6 +12,7 @@
     "test": "npm run login && npm run local && npm run parallel",
     "scenario": "CONFIG_FILE=login ./node_modules/cucumber/bin/cucumber.js features/$SCENARIO",
     "login": "CONFIG_FILE=login ./node_modules/cucumber/bin/cucumber.js features/login.feature",
+    "transaction": "CONFIG_FILE=login ./node_modules/cucumber/bin/cucumber.js features/transaction.feature",
     "local": "CONFIG_FILE=local ./node_modules/cucumber/bin/cucumber.js features/local.feature",
     "parallel": "CONFIG_FILE=parallel ./scripts/cucumber-runner.js features/login.feature",
     "parallelJenkins": "CONFIG_FILE=parallelJenkins ./scripts/cucumber-runner.js features/login.feature",

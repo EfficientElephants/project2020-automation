@@ -108,6 +108,7 @@ module.exports = function() {
 
   this.Then(/^I should see I am on the dashboard page$/, function(next) {
     var self = this;
+    sleep.sleep(10);
     var dashboardURL = "https://project-2020.azurewebsites.net/#/dashboard";
     this.driver
       .getCurrentUrl()
